@@ -1,0 +1,24 @@
+.full-pizza {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        @media(max-width: 735px) {
+            width: 400px;
+        }
+        @media(max-width: 470px) {
+            width: 220px;
+        }
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        align-items: center;
+    }
+    @media(max-width: 1255px) {
+        flex-direction: column;
+    }
+}
