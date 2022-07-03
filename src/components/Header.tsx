@@ -7,7 +7,7 @@ import Search from './Search'
 import { useSelector } from 'react-redux'
 import {selectCart} from '../redux/cart/selectors'
 
-import logoSvg from '../assets/img/pizza-logo.svg'
+import logoSvg from '../assets/img/logo3.svg'
 
 const Header: React.FC = () => {
     const {totalPrice, items} = useSelector(selectCart)
@@ -32,10 +32,10 @@ const Header: React.FC = () => {
                     <img width="38" src={logoSvg} alt="Pizza logo" />
                     <div>
                         <h1>
-                            PizzaDelivery
+                             <span>Dishe</span>livery
                         </h1>
                         <p>
-                            самая вкусная пицца во вселенной
+                            Вкуснейшая еда с доставкой на дом
                         </p>
                     </div>
                 </div>

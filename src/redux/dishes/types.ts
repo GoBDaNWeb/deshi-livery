@@ -1,10 +1,10 @@
-export type PizzaFetchParams = {
+export type DishesFetchParams = {
     sortBy: string,
     category: string,
     search:string
 }
 
-export type PizzaItems = {
+export type DishesItems = {
     id: string,
     category: number,
     title: string,
@@ -22,7 +22,7 @@ export enum Status {
   }
   
 
-export interface PizzaState {
-    items: PizzaItems[],
+export interface DishesState {
+    items: DishesItems[],
     status: Status
 }

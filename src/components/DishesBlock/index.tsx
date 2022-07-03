@@ -7,6 +7,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import {addItem} from '../../redux/cart/cartSlice'
 import {selectCartItemById} from '../../redux/cart/selectors'
 
+// * components 
+import CustomImage from '../CastomImage'
+
 type PizzaBlockProps = {
     id: string,
     title: string,
@@ -24,8 +27,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({id, title, price, imageUrl, size
 
     const [activeType, setActiveType] = useState(0)
     const [activeSize, setActiveSize] = useState(0)
-    const typeNames = ['тонкое', 'традиционное']
-    const sizeNames = [26, 30, 40]
+    const typeNames = ['обычное', 'острое🌶']
 
     const onClickAdd = () => {
         const item = {
@@ -34,7 +36,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({id, title, price, imageUrl, size
             price,
             imageUrl,
             type: typeNames[activeType],
-            size: sizeNames[activeSize],
+            size: sizes[activeSize],
             repeatCount: 0
         }
 
@@ -42,19 +44,15 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({id, title, price, imageUrl, size
     }
 
     return (
-        <div className='pizza-block-wrapper'>
-            <div className="pizza-block">
-                <Link key={id} to={`/pizza/${id}`}>
-                    <img
-                        className="pizza-block__image"
-                        src={imageUrl}
-                        alt="Pizza"
-                    />
-                    <h4 className="pizza-block__title">
-                        {title}
-                    </h4>
+        <div className='dishes-block-wrapper'>
+            <div className="dishes-block">
+                <Link className='image' key={id} to={`/pizza/${id}`}>
+                    <CustomImage imgSrc={imageUrl} pt='100%'/>               
                 </Link>
-                <div className="pizza-block__selector">
+                <h4 className="dishes-block__title">
+                    {title}
+                </h4>
+                <div className="dishes-block__selector">
                     <ul>
                         {
                             types.map(typeId => (
@@ -73,17 +71,17 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({id, title, price, imageUrl, size
                             sizes.map((size, index) => (
                                 <li
                                     onClick={() => setActiveSize(index)}
-                                    key={size}
+                                    key={index}
                                     className={`${activeSize === index && 'active'}`}
                                 >
-                                    {size} см
+                                    {size} гр.
                                 </li>
                             ))
                         }
                     </ul>
                 </div>
-                <div className="pizza-block__bottom">
-                    <div className="pizza-block__price">
+                <div className="dishes-block__bottom">
+                    <div className="dishes-block__price">
                         от {price} ₽
                     </div>
                     <button 

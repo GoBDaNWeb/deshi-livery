@@ -1,11 +1,23 @@
 @import '../variables';
 
-.pizza-block {
+.dishes-block {
   width: 280px;
   text-align: center;
   margin-bottom: 65px;
   transition: all 0.2s ease-in-out;
+  color: $text;
+  .image {
+    
+    overflow: hidden;
+    height: 260px;
+    width: 260px;
+    .custom-image{
+      img {
+        border-radius: 999px;
 
+      }
+    }
+  }
   &:hover {
     transform: scale(1.03);
   }
@@ -17,6 +29,11 @@
 
   &__image {
     width: 260px;
+    height: 260px;
+    border-radius: 999px;
+    background-position: center;
+    background-size: contain;
+    background-origin: content-box;
   }
 
   &__title {
@@ -24,11 +41,12 @@
     font-weight: 900;
     letter-spacing: 1%;
     margin-bottom: 20px;
+    color: $text;
   }
 
   &__selector {
     display: flex;
-    background-color: #f3f3f3;
+    background-color: $background;
     border-radius: 10px;
     flex-direction: column;
     padding: 6px;
@@ -49,7 +67,7 @@
         font-size: 14px;
         @include noselect();
         &.active {
-          background: #ffffff;
+          background: #232323;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
           border-radius: 5px;
           cursor: auto;
@@ -68,6 +86,7 @@
   &__price {
     font-weight: bold;
     font-size: 22px;
+    color: $text;
     line-height: 27px;
     letter-spacing: 0.015em;
   }

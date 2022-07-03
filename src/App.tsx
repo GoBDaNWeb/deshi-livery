@@ -25,6 +25,7 @@ function App() {
             <div className="wrapper">
                 <Header/>
                 <div className="content">
+                    <h2>Hello</h2>
                     <div className="container">
                         <Routes>
                             <Route path='/' element={<Home/>}/>

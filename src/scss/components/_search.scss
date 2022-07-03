@@ -4,15 +4,17 @@
   }
   
   .input {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(132, 204, 22, 0.5);
     padding: 12px 20px;
     padding-left: 42px;
     width: 400px;
     border-radius: 10px;
     font-size: 16px;
+    background: #262626;
+    color: $green;
   
     &:focus {
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(132, 204, 22, 1);
     }
     @media(max-width: 460px) {
       width: 250px;

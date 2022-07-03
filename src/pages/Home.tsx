@@ -7,15 +7,15 @@ import {useNavigate} from 'react-router-dom'
 import { useSelector} from 'react-redux'
 import {useAppDispatch} from '../redux/store'
 import {setFilters} from '../redux/filter/filterSlice'
-import {fetchPizza} from '../redux/pizza/pizzaSlice'
+import {fetchDishes} from '../redux/dishes/dishesSlice'
 import {selectFilter} from '../redux/filter/selectors'
-import {selectPizza} from '../redux/pizza/selectors'
+import {selectDishes} from '../redux/dishes/selectors'
 
 // * components
 import Categories from '../components/Categories'
 import Sort from '../components/Sort'
-import PizzaBlock from '../components/PizzaBlock'
-import {Skeleton} from '../components/PizzaBlock/Skeleton'
+import DishesBlock from '../components/DishesBlock'
+import {Skeleton} from '../components/DishesBlock/Skeleton'
 import {sortList} from '../components/Sort'
 
 type SearchPizzaParams = {
@@ -29,7 +29,7 @@ type SearchPizzaParams = {
 const Home: React.FC = () => {
     const dispatch = useAppDispatch()
     const {categoryId, sortType, searchValue} = useSelector(selectFilter)
-    const {items, status} = useSelector(selectPizza)
+    const {items, status} = useSelector(selectDishes)
 
     const fetch = async() => {
         try {
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
             const sortBy = sortType.sortProperty.replace('-', '')
             const category = categoryId > 0 ? String(categoryId) : ''
             const search = searchValue
-            dispatch(fetchPizza({
+            dispatch(fetchDishes({
                 sortBy,
                 category,
                 search
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
                 <Sort/>
             </div>
             <h2 className="content__title">
-                Все пиццы
+                Все Блюда
             </h2>
             <div className="content__items">
                 {
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
                         <Skeleton key={index}/>
                     ))
                     : items?.map(item => (
-                        <PizzaBlock key={item.id} {...item}/>
+                        <DishesBlock key={item.id} {...item}/>
                     ))
                 }
             </div>

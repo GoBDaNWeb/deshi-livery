@@ -26,11 +26,14 @@
     }
 
     h1 {
-      color: #181818;
+      color: $text;
       font-size: 24px;
       letter-spacing: 1%;
       text-transform: uppercase;
       font-weight: 800;
+      span {
+        color: $green;
+      }
     }
 
     p {

@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { setCategoryId } from '../redux/filter/filterSlice';
 import {selectFilter} from '../redux/filter/selectors'
 
-const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
+const categories = ['Все', 'Мясные', 'Вегетарианская', 'Десерты', 'Морепродукты'];
 
 const Categories: React.FC = memo(() => {
     const dispatch = useDispatch()

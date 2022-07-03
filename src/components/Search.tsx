@@ -49,7 +49,7 @@ const Search: React.FC = () => {
                     fill="none"
                     id="XMLID_42_"
                     r="9"
-                    stroke="#000000"
+                    stroke="#84cc16"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeMiterlimit="10"
@@ -58,7 +58,7 @@ const Search: React.FC = () => {
                 <line
                     fill="none"
                     id="XMLID_44_"
-                    stroke="#000000"
+                    stroke="#84cc16"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeMiterlimit="10"
@@ -73,7 +73,7 @@ const Search: React.FC = () => {
                 className='input'
                 ref={inputRef}
                 value={value}
-                placeholder='Найти пиццу'
+                placeholder='Найти блюдо'
                 onChange={(e) => onChangeInput(e)}
             />
              {

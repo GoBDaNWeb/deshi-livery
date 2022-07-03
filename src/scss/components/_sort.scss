@@ -2,6 +2,7 @@
 
 .sort {
   position: relative;
+  z-index: 99;
   &__label {
     display: flex;
     align-items: center;
@@ -12,11 +13,12 @@
 
     b {
       margin-right: 8px;
+      color: $text;
     }
 
     span {
-      color: $orange;
-      border-bottom: 1px dashed $orange;
+      color: $green;
+      border-bottom: 1px dashed $green;
       cursor: pointer;
     }
   }
@@ -45,7 +47,7 @@
 
         &.active {
           font-weight: bold;
-          color: $orange;
+          color: $green;
         }
       }
     }

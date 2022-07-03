@@ -5,7 +5,7 @@
     display: flex;
 
     li {
-      background-color: #f9f9f9;
+      background-color: #f3f3f3;
       padding: 13px 30px;
       border-radius: 30px;
       margin-right: 10px;
@@ -15,15 +15,15 @@
       @include noselect();
 
       &:hover {
-        background-color: darken(#f9f9f9, 2%);
+        background-color: lighten(#D6D3D1, 8%);
       }
 
       &:active {
-        background-color: darken(#f9f9f9, 5%);
+        background-color: lighten(#D6D3D1, 12%);
       }
 
       &.active {
-        background-color: #282828;
+        background-color: $background;
         color: #fff;
       }
     }
