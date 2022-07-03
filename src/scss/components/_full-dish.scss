@@ -1,9 +1,11 @@
-.full-pizza {
+.full-dish {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     img {
+        width: 600px;
+        height: 600px;
         @media(max-width: 735px) {
             width: 400px;
         }
@@ -17,6 +19,15 @@
         justify-content: center;
         gap: 3rem;
         align-items: center;
+        
+        div {
+            h2 {
+                color: $text;
+            }
+            h4 {
+                color: $text;
+            }
+        }
     }
     @media(max-width: 1255px) {
         flex-direction: column;

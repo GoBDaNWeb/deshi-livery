@@ -10,7 +10,7 @@ import {selectCartItemById} from '../../redux/cart/selectors'
 // * components 
 import CustomImage from '../CastomImage'
 
-type PizzaBlockProps = {
+type DishesBlockProps = {
     id: string,
     title: string,
     price: number,
@@ -19,7 +19,7 @@ type PizzaBlockProps = {
     types: number[],
 }
 
-const PizzaBlock: React.FC<PizzaBlockProps> = ({id, title, price, imageUrl, sizes, types}) => {
+const DishesBlock: React.FC<DishesBlockProps> = ({id, title, price, imageUrl, sizes, types}) => {
     const dispatch = useDispatch()
     const cartItem = useSelector(selectCartItemById(id))
 
@@ -46,7 +46,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({id, title, price, imageUrl, size
     return (
         <div className='dishes-block-wrapper'>
             <div className="dishes-block">
-                <Link className='image' key={id} to={`/pizza/${id}`}>
+                <Link className='image' key={id} to={`/dish/${id}`}>
                     <CustomImage imgSrc={imageUrl} pt='100%'/>               
                 </Link>
                 <h4 className="dishes-block__title">
@@ -113,4 +113,4 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({id, title, price, imageUrl, size
     )
 }
 
-export default PizzaBlock
+export default DishesBlock

@@ -7,7 +7,7 @@ import Search from './Search'
 import { useSelector } from 'react-redux'
 import {selectCart} from '../redux/cart/selectors'
 
-import logoSvg from '../assets/img/logo3.svg'
+import logoSvg from '../assets/img/logo.svg'
 
 const Header: React.FC = () => {
     const {totalPrice, items} = useSelector(selectCart)
