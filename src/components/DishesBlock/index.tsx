@@ -25,11 +25,11 @@ const DishesBlock: React.FC<DishesBlockProps> = ({id, title, price, imageUrl, si
 
     const cartItemCount = cartItem ? cartItem.repeatCount : 0
 
-    const [activeType, setActiveType] = useState(0)
-    const [activeSize, setActiveSize] = useState(0)
+    const [activeType, setActiveType] = useState<number>(0)
+    const [activeSize, setActiveSize] = useState<number>(0)
     const typeNames = ['обычное', 'острое🌶']
 
-    const onClickAdd = () => {
+    const onClickAdd = (): void => {
         const item = {
             id,
             title,

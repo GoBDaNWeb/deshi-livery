@@ -16,7 +16,7 @@ const Categories: React.FC = memo(() => {
         <div className='categories'>
             <ul>
                 {
-                    categories.map((category, index) => (
+                    categories.map((category: string, index: number) => (
                         <li 
                             onClick={() => dispatch(setCategoryId(index))}
                             className={`${categoryId === index ? 'active' : ''}`}

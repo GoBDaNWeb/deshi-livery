@@ -12,12 +12,12 @@ import logoSvg from '../assets/img/logo.svg'
 const Header: React.FC = () => {
     const {totalPrice, items} = useSelector(selectCart)
     const totalCount = items.reduce((sum: number, item) => sum + item.repeatCount, 0)
-    const isMounted = useRef(false);
+    const isMounted = useRef<boolean>(false);
 
 
     const {pathname} = useLocation()
 
-    useEffect(() => {
+    useEffect((): void => {
         if (isMounted.current) {
           const json = JSON.stringify(items);
           localStorage.setItem('cart', json);

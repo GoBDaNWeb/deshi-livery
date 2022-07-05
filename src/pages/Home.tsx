@@ -16,15 +16,6 @@ import Categories from '../components/Categories'
 import Sort from '../components/Sort'
 import DishesBlock from '../components/DishesBlock'
 import {Skeleton} from '../components/DishesBlock/Skeleton'
-import {sortList} from '../components/Sort'
-
-type SearchPizzaParams = {
-    sortBy: string;
-    order: string;
-    category: string;
-    search: string;
-    currentPage: string;
-  };
 
 const Home: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -34,9 +25,9 @@ const Home: React.FC = () => {
     const fetch = async() => {
         try {
            
-            const sortBy = sortType.sortProperty.replace('-', '')
-            const category = categoryId > 0 ? String(categoryId) : ''
-            const search = searchValue
+            const sortBy: string = sortType.sortProperty.replace('-', '')
+            const category: string = categoryId > 0 ? String(categoryId) : ''
+            const search: string = searchValue
             dispatch(fetchDishes({
                 sortBy,
                 category,
@@ -47,7 +38,7 @@ const Home: React.FC = () => {
         }
     } 
 
-    useEffect(() => {
+    useEffect((): void => {
         fetch()
     }, [categoryId, sortType.sortProperty, searchValue])
     

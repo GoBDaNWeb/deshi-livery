@@ -18,7 +18,7 @@ const FullDishes: React.FC = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
 
-	React.useEffect(() => {
+	React.useEffect((): void => {
 	async function fetch() {
 		try {
 		const { data } = await axios.get<DishesItems[]>('https://62b9cb2841bf319d2285a97b.mockapi.io/dishes?id=' + id);
@@ -35,7 +35,6 @@ const FullDishes: React.FC = () => {
 	if (!dish) {
 		return <>Загрузка...</>;
 	}
-	console.log(dish[0]);
 	
 	return (
 		<div className="container">

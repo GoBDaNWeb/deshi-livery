@@ -18,14 +18,11 @@ type CartItemProps = {
 const CartItem: React.FC<CartItemProps> = ({id, title, type, size, price, repeatCount, imageUrl}) => {
     const dispatch = useDispatch();
 
-    const onClickRemove = () => {
+    const onClickRemove = (): void => {
         if (window.confirm('Ты действительно хочешь удалить товар?')) {
             dispatch(removeItem(id));
         }
-    };
-
-    console.log(id);
-    
+    };    
 
     return (
         <div className="cart__item">

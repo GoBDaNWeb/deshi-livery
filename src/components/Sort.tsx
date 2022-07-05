@@ -1,5 +1,5 @@
 // * react
-import React, { useState, memo, useRef} from 'react'
+import React, { useEffect, useState, memo, useRef} from 'react'
 
 // * redux
 import {useDispatch, useSelector} from 'react-redux'
@@ -30,14 +30,14 @@ const Sort: React.FC = memo(() => {
 
     const sortRef = useRef<HTMLDivElement>(null)
 
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState<boolean>(false)
 
-    const handleList = (item: SortListItem) => {
+    const handleList = (item: SortListItem): void => {
         dispatch(setSortType(item))
         setOpen(false)
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             const _e = e as PopupClick
             const composed = _e.composedPath();

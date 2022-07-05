@@ -11,24 +11,24 @@ const Search: React.FC = () => {
     const dispatch = useDispatch()
     const {searchValue} = useSelector(selectFilter)
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState<string>('')
 
     const inputRef = useRef<HTMLInputElement>(null)
 
     const updateSearchValue = useCallback(
-        debounce((str: string) => {
+        debounce((str: string): void => {
             dispatch(setSearchValue(str))
         }, 300)
         ,[]
     )
 
-    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const {value} = e.target
         setValue(value)
         updateSearchValue(value)
     }
 
-    const onClickClear = () => {
+    const onClickClear = (): void => {
         dispatch(setSearchValue(''))
         setValue('');
         inputRef.current?.focus()

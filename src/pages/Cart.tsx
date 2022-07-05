@@ -17,7 +17,7 @@ export default function Cart() {
 
     const totalCount = items.reduce((sum: number, item) => sum + item.repeatCount, 0);
 
-    const onClickClearCart = () => {
+    const onClickClearCart = (): void => {
         if (window.confirm('Ты действительно хочешь удалить товар?')) {
             dispatch(clearItems());
         }
